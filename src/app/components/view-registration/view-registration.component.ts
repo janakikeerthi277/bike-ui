@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BikeService } from 'src/app/services/bike.service';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-view-registration',
@@ -25,6 +26,18 @@ export class ViewRegistrationComponent implements OnInit {
       err => console.log(err),
       () => console.log('Bikes Loaded')
     )
+  }
+
+  deleteBikeReg(id: number){
+    console.log(id)
+    this.bikeService.deleteBikeRegistration(id).subscribe(
+      data => {
+        return true;
+      },
+      error => {
+        return Observable.throw(error);
+      }
+    );
   }
 
 }

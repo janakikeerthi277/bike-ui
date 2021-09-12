@@ -1,4 +1,7 @@
 <div class="container">
+    <div class="row">
+        <a class="btn btn=primary" routerLink="/admin">View All Bikes</a>
+      </div>
     <form [formGroup]="bikeform" (ngSubmit)="submitRegistration()" novalidate>
       <div *ngIf="validMessage != ''">
         <h3 class="has-info">{{validMessage}}</h3>
@@ -37,8 +40,10 @@
         <label>Purchase Date</label>
         <input type="text" class="form-control" formControlName="purchaseDate" required/>
       </div>
-  
-      <button type="submit" class="btn btn-primary" >Submit</button>
+      <div class="form-group">
+        <br/>
+        <button type="submit" class="btn btn-primary" >Submit</button>
+      </div>
     </form>
   </div>
   
